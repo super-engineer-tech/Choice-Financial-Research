@@ -3,9 +3,9 @@
 @import "./font.css";
 @import "./utility.css";
 @import "./reset.css";
-@import "/src/assets/css/components/navbar.css";
-@import "/src/assets/css/components/services.css";
-@import "/src/assets/css/components/risk-analysis.css";
+@import "/assets/css/components/navbar.css";
+@import "/assets/css/components/services.css";
+@import "/assets/css/components/risk-analysis.css";
 
 * {
   margin: 0;

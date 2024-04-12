@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/src/assets/images/Choice-Stocks-Index-Financial-Research-icon.png"
+        autocomplete="off" type="image/x-icon">
+    <link rel="stylesheet" href="/src/assets/css/style.css">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script src="assets/js/global.constant.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <title>Risk Analysis</title>
+</head>
+
+<body>
+    <div class="choice-stocks position-relative">
+
+        <!-- Nav Bar -->
+        <nav class="navbar navbar-expand-lg position-fixed py-0 bg-dark" id="navbar">
+            <div class="container">
+                <a class="navbar-brand text-white" href="#">
+                    <img src="assets/images/Choice-Stocks-Index-Financial-Research-icon.png" alt="Share Market Logo"
+                        height="40" width="auto" />
+                    <h2 class="d-inline-block">Choice Stocks Index Financial Research</h2>
+                </a>
+                <button class="navbar-toggler text-warning border-0 collapsed" onclick="toggleMenu()" autocomplete="off"
+                    type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="material-symbols-outlined close">
+                        menu
+                    </span>
+                    <span class="material-symbols-outlined open">
+                        menu_open
+                    </span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0 ">
+                        <li class="nav-item">
+                            <a class="nav-link text-white active" aria-current="page" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" aria-current="page" href="about-us.html">About Us</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link text-white" aria-current="page" href="risk-analysis.html">Risk
+                                Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" aria-current="page" href="enquiry.html">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" aria-current="page" href="pricing.html">Pricing</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" aria-current="page" href="payment.html">Payment</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" aria-current="page" href="contact-us.html">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <section class="risk-analysis pt-5">
+            <div class="container py-5">
+                <h2 class="text-center mb-5">RISK ANALYSIS FORM</h2>
+                <form onsubmit="submitRiskAnalysisForm(event, 'riskAnalysisForm1')" id="riskAnalysisForm1"
+                    class="needs-validation" novalidate="">
+                    <div class="form-step active-step" id="step-1">
+                        <div class="grid gap-4">
+                            <div class="g-col-lg-6 g-col-12">
+                                <div class="d-flex">
+                                    <label for="name" class="form-label">Name</label>
+                                    <div class="d-flex flex-column w-100">
+                                        <input autocomplete="off" type="text" class="form-control" minlength="3"
+                                            maxlength="50" id="name" name="name" placeholder="Enter your name"
+                                            required />
+                                        <span class="invalid-feedback">Name should be atleast 3 character</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="g-col-lg-6 g-col-12">
+                                <div class="d-flex">
+                                    <label for="contact" class="form-label">Contact</label>
+                                    <div class="d-flex flex-column w-100">
+                                        <input autocomplete="off" type="text" pattern="(?:\+?91)?[6789]\d{9}$"
+                                            class="form-control" id="contact" name="contact"
+                                            placeholder="+91 9012345678" required />
+                                        <span class="valid-feedback">Valid Mobile Number</span>
+                                        <span class="invalid-feedback">Invalid Mobile Number</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="g-col-lg-6 g-col-12">
+                                <div class="d-flex">
+                                    <label for="panNo" class="form-label">PAN No.<span
+                                            class="text-danger">*</span></label>
+                                    <div class="d-flex flex-column w-100">
+                                        <input autocomplete="off" type="text" class="form-control" id="panNo"
+                                            minlength="10" maxlength="10" name="panNo" placeholder="JFYPSXXXXX"
+                                            pattern="[A-Z]{5}[0-9]{4}[A-Z]{1}$" required />
+                                        <span class="valid-feedback">Valid PAN Number</span>
+                                        <span class="invalid-feedback">Invalid PAN Number</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="g-col-lg-6 g-col-12">
+                                <div class="d-flex">
+                                    <label for="adharCardNo" class="form-label">Adhar No <span
+                                            class="text-danger">*</span></label>
+                                    <div class="d-flex flex-column w-100">
+                                        <input autocomplete="off" type="text" class="form-control" minlength="12"
+                                            maxlength="12" id="adharCardNo" name="adharCardNo"
+                                            placeholder="9008 XXXX XXXX XXXX"
+                                            pattern="[2-9]{1}[0-9]{3}[0-9]{4}[0-9]{4}$" required />
+                                        <span class="valid-feedback">Valid Adhar Number</span>
+                                        <span class="invalid-feedback">Invalid Adhar Number</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="g-col-lg-6 g-col-12">
+                                <div class="d-flex">
+                                    <label for="dob" class="form-label">Date of Birth</label>
+                                    <input autocomplete="off" type="text" onfocus="this.type='date'; this.showPicker()"
+                                        class="form-control" id="dob" name="dob" placeholder="DD-MM-YYYY" />
+                                </div>
+                            </div>
+                            <div class="g-col-lg-6 g-col-12">
+                                <div class="d-flex">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input autocomplete="off" type="email" class="form-control" id="email"
+                                        pattern="\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,7}\b/" name="email"
+                                        placeholder="yourname@example.com" />
+                                </div>
+                            </div>
+                            <div class="g-col-lg-6 g-col-12">
+                                <div class="d-flex">
+                                    <label for="city" class="form-label">City</label>
+                                    <input autocomplete="off" type="text" class="form-control" pattern="[A-Za-z]{3,}$"
+                                        id="city" name="city" placeholder="Indore" />
+                                </div>
+                            </div>
+                            <div class="g-col-12">
+                                <div class="d-flex">
+                                    <span class="fw-medium  me-4">Terms and Conditions</span>
+                                    <p class="fs-14 border p-1">By visiting our site you are agreeing to be bound by the
+                                        following
+                                        terms and conditions.</br>
+                                        We may change these terms and conditions at any time. Your continued use of
+                                        capitalvraddhi.com means that you accept any new or modified terms and
+                                        conditions
+                                        that we come up with.</br>
+                                        Please re-visit the `Terms of Use' link at our site from time to time to stay
+                                        abreast of any changes that we may introduce.The term capitalvraddhi.com' is
+                                        used
+                                        through this entire Terms of Use document to refer to the website, its owners
+                                        and
+                                        the employees and associates of the owner.</p>
+                                </div>
+                            </div>
+                            <div class="g-col-12 text-end">
+                                <button autocomplete="off" type="submit" class="btn btn-primary">Next</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <div class="form-step" id="step-2">
+                    <form onsubmit="submitRiskAnalysisForm(event, 'riskAnalysisForm2', false)"
+                        onchange="handleFormChange()" id="riskAnalysisForm2" class="needs-validation" novalidate="">
+                        <div class="grid gap-4">
+                            <!-- Question 1 -->
+                            <div class="g-col-lg-4 g-col-12 question-bottom-border">
+                                <p class="fw-medium ">1&#41; What is your Age Group?</p>
+                                <div class="row row-cols-2 row-gap-3">
+                                    <div class="col">
+                                        <label for="question1a">
+                                            <input type="radio" class="form-check-input" id="question1a" name="q1"
+                                                data-id="4" value="21 to 35 Year (4)">
+                                            <span>21 to 35 Year (4)</span>
+                                        </label>
+                                    </div>
+                                    <div class="col">
+                                        <label for="question1b">
+                                            <input type="radio" class="form-check-input" id="question1b" name="q1"
+                                                data-id="3" value="36 to 45 Year (3)">
+                                            <span>36 to 45 Year (3)</span>
+                                        </label>
+                                    </div>
+                                    <div class="col">
+                                        <label for="question1c">
+                                            <input type="radio" class="form-check-input" id="question1c" name="q1"
+                                                data-id="2" value="46 to 55 Year (2)">
+                                            <span>46 to 55 Year (2)</span>
+                                        </label>
+                                    </div>
+                                    <div class="col">
+                                        <label for="question1d">
+                                            <input type="radio" class="form-check-input" id="question1d" name="q1"
+                                                data-id="1" value="55 to 60 Year (1)">
+                                            <span>55 to 60 Year (1)</span>
+                                        </label>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="question1e">
+                                            <input type="radio" class="form-check-input" id="question1e" name="q1"
+                                                data-id="0" value="Above 61 Year (0)">
+                                            <span>Above 61 Year (0)</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Question 2 -->
+                            <div class="g-col-lg-4 g-col-12 question-bottom-border">
+                                <p class="fw-medium ">2&#41; What is your occupation?</p>
+                                <div class="row row-cols-2 row-gap-3">
+                                    <div class="col">
+                                        <label for="question2a">
+                                            <input type="radio" class="form-check-input" id="question2a" name="q2"
+                                                data-id="4" value="Business (4)">
+                                            <span>Business (4)</span>
+                                        </label>
+                                    </div>
+                                    <div class="col">
+                                        <label for="question2b">
+                                            <input type="radio" class="form-check-input" id="question2b" name="q2"
+                                                data-id="3" value="Self Employed (3)">
+                                            <span>Self Employed (3)</span>
+                                        </label>
+                                    </div>
+                                    <div class="col">
+                                        <label for="question2c">
+                                            <input type="radio" class="form-check-input" id="question2c" name="q2"
+                                                data-id="2" value="Professional (2)">
+                                            <span>Professional (2)</span>
+                                        </label>
+                                    </div>
+                                    <div class="col">
+                                        <label for="question2d">
+                                            <input type="radio" class="form-check-input" id="question2d" name="q2"
+                                                data-id="1" value="Salaried (1)">
+                                            <span>Salaried (1)</span>
+                                        </label>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="question2e">
+                                            <input type="radio" class="form-check-input" id="question2e" name="q2"
+                                                data-id="0" value="Student/Retired/Housewife/other (0)">
+                                            <span>Student/Retired/Housewife/other (0)</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Question 3 -->
+                            <div class="g-col-lg-4 g-col-12 question-bottom-border">
+                                <p class="fw-medium ">3&#41; Your Current Investment in trading</p>
+                                <div class="row row-cols-2 row-gap-3">
+                                    <div class="col-12">
+                                        <label for="question3e">
+                                            <input type="radio" class="form-check-input" id="question3e" name="q3"
+                                                data-id="4" value="10 Lac and above (4)">
+                                            <span>10 Lac and above (4)</span>
+                                        </label>
+                                    </div>
+                                    <div class="col">
+                                        <label for="question3d">
+                                            <input type="radio" class="form-check-input" id="question3d" name="q3"
+                                                data-id="3" value="5 to 10 Lac (3)">
+                                            <span>5 to 10 Lac (3)</span>
+                                        </label>
+                                    </div>
+                                    <div class="col">
+                                        <label for="question3c">
+                                            <input type="radio" class="form-check-input" id="question3c" name="q3"
+                                                data-id="2" value="2 to 5 Lac (2)">
+                                            <span>2 to 5 Lac (2)</span>
+                                        </label>
+                                    </div>
+                                    <div class="col">
+                                        <label for="question3b">
+                                            <input type="radio" class="form-check-input" id="question3b" name="q3"
+                                                data-id="1" value="50k to 2 Lac (1)">
+                                            <span>50k to 2 Lac (1)</span>
+                                        </label>
+                                    </div>
+                                    <div class="col">
+                                        <label for="question3a">
+                                            <input type="radio" class="form-check-input" id="question3a" name="q3"
+                                                data-id="0" value="Nill (0)">
+                                            <span>Nill (0)</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Question 4 -->
+                            <div class="g-col-lg-4 g-col-12 question-bottom-border">
+                                <p class="fw-medium ">4&#41; Your Preferred Investment Type</p>
+                                <div class="row row-cols-2 row-gap-3">
+                                    <div class="col">
+                                        <label for="question4a">
+                                            <input type="radio" class="form-check-input" id="question4a" name="q4"
+                                                data-id="4" value="Intraday and Holding (4)">
+                                            <span>Intraday and Holding (4)</span>
+                                        </label>
+                                    </div>
+                                    <div class="col">
+                                        <label for="question4b">
+                                            <input type="radio" class="form-check-input" id="question4b" name="q4"
+                                                data-id="3" value="Intraday (3)">
+                                            <span>Intraday (3)</span>
+                                        </label>
+                                    </div>
+                                    <div class="col">
+                                        <label for="question4c">
+                                            <input type="radio" class="form-check-input" id="question4c" name="q4"
+                                                data-id="2" value="Short Term (2)">
+                                            <span>Short Term (2)</span>
+                                        </label>
+                                    </div>
+                                    <div class="col">
+                                        <label for="question4d">
+                                            <input type="radio" class="form-check-input" id="question4d" name="q4"
+                                                data-id="1" value="Long term (1)">
+                                            <span>Long term (1)</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Question 5 -->
+                            <div class="g-col-lg-4 g-col-12 question-bottom-border">
+                                <p class="fw-medium ">5&#41; Total Annual Income</p>
+                                <div class="row row-cols-2 row-gap-3">
+                                    <div class="col">
+                                        <label for="question5a">
+                                            <input type="radio" class="form-check-input" id="question5a" name="q5"
+                                                data-id="4" value="20 Lac and above (4)">
+                                            <span>20 Lac and above (4)</span>
+                                        </label>
+                                    </div>
+                                    <div class="col">
+                                        <label for="question5b">
+                                            <input type="radio" class="form-check-input" id="question5b" name="q5"
+                                                data-id="3" value="10 to 20 Lac (3)">
+                                            <span>10 to 20 Lac (3)</span>
+                                        </label>
+                                    </div>
+                                    <div class="col">
+                                        <label for="question5c">
+                                            <input type="radio" class="form-check-input" id="question5c" name="q5"
+                                                data-id="2" value="5 to 10 Lac (2)">
+                                            <span>5 to 10 Lac (2)</span>
+                                        </label>
+                                    </div>
+                                    <div class="col">
+                                        <label for="question5d">
+                                            <input type="radio" class="form-check-input" id="question5d" name="q5"
+                                                data-id="1" value="2 to 5 Lac (1)">
+                                            <span>2 to 5 Lac (1)</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Question 6 -->
+                            <div class="g-col-lg-4 g-col-12 question-bottom-border">
+                                <p class="fw-medium ">6&#41; Experience with Equity Investment</p>
+                                <div class="row row-cols-2 row-gap-3">
+                                    <div class="col">
+                                        <label for="question6a">
+                                            <input type="radio" class="form-check-input" id="question6a" name="q6"
+                                                data-id="4" value="Extensive Experience (4)">
+                                            <span>Extensive Experience (4)</span>
+                                        </label>
+                                    </div>
+                                    <div class="col">
+                                        <label for="question6b">
+                                            <input type="radio" class="form-check-input" id="question6b" name="q6"
+                                                data-id="3" value="Moderate Experience (3)">
+                                            <span>Moderate Experience (3)</span>
+                                        </label>
+                                    </div>
+                                    <div class="col">
+                                        <label for="question6c">
+                                            <input type="radio" class="form-check-input" id="question6c" name="q6"
+                                                data-id="2" value="Less Experience (2)">
+                                            <span>Less Experience (2)</span>
+                                        </label>
+                                    </div>
+                                    <div class="col">
+                                        <label for="question6d">
+                                            <input type="radio" class="form-check-input" id="question6d" name="q6"
+                                                data-id="1" value="Very less Experience (1)">
+                                            <span>Very less Experience (1)</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Question 7 -->
+                            <div class="g-col-lg-4 g-col-12 question-bottom-border">
+                                <p class="fw-medium ">7&#41; Experience with Commodity Investment</p>
+                                <div class="row row-cols-2 row-gap-3">
+                                    <div class="col">
+                                        <label for="question7a">
+                                            <input type="radio" class="form-check-input" id="question7a" name="q7"
+                                                data-id="4" value="Extensive Experience(4)">
+                                            <span>Extensive Experience(4)</span>
+                                        </label>
+                                    </div>
+                                    <div class="col">
+                                        <label for="question7b">
+                                            <input type="radio" class="form-check-input" id="question7b" name="q7"
+                                                data-id="3" value="Moderate Experience(3)">
+                                            <span>Moderate Experience(3)</span>
+                                        </label>
+                                    </div>
+                                    <div class="col">
+                                        <label for="question7c">
+                                            <input type="radio" class="form-check-input" id="question7c" name="q7"
+                                                data-id="2" value="Less Experience(2)">
+                                            <span>Less Experience(2)</span>
+                                        </label>
+                                    </div>
+                                    <div class="col">
+                                        <label for="question7d">
+                                            <input type="radio" class="form-check-input" id="question7d" name="q7"
+                                                data-id="1" value="Very Less Experience(1)">
+                                            <span>Very Less Experience(1)</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Question 8 -->
+                            <div class="g-col-lg-4 g-col-12 question-bottom-border">
+                                <p class="fw-medium ">8&#41; What is your experience with investment in past</p>
+                                <div class="row row-cols-2 row-gap-3">
+                                    <div class="col">
+                                        <label for="question8a">
+                                            <input type="radio" class="form-check-input" id="question8a" name="q8"
+                                                data-id="4" value="Very Good(4)">
+                                            <span>Very Good(4)</span>
+                                        </label>
+                                    </div>
+                                    <div class="col">
+                                        <label for="question8b">
+                                            <input type="radio" class="form-check-input" id="question8b" name="q8"
+                                                data-id="3" value="Good(3)">
+                                            <span>Good(3)</span>
+                                        </label>
+                                    </div>
+                                    <div class="col">
+                                        <label for="question8c">
+                                            <input type="radio" class="form-check-input" id="question8c" name="q8"
+                                                data-id="2" value="Average(2)">
+                                            <span>Average(2)</span>
+                                        </label>
+                                    </div>
+                                    <div class="col">
+                                        <label for="question8d">
+                                            <input type="radio" class="form-check-input" id="question8d" name="q8"
+                                                data-id="1" value="Poor(1)">
+                                            <span>Poor(1)</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Question 9 -->
+                            <div class="g-col-lg-4 g-col-12 question-bottom-border">
+                                <p class="fw-medium ">9&#41; Investment Goal/Objective</p>
+                                <div class="row row-cols-2 row-gap-3">
+                                    <div class="col">
+                                        <label for="question9a">
+                                            <input type="radio" class="form-check-input" id="question9a" name="q9"
+                                                data-id="4" value="Capital Appreciation and Regular Income(4)">
+                                            <span>Capital Appreciation and Regular Income(4)</span>
+                                        </label>
+                                    </div>
+                                    <div class="col">
+                                        <label for="question9b">
+                                            <input type="radio" class="form-check-input" id="question9b" name="q9"
+                                                data-id="3" value="Capital Appreciation(3)">
+                                            <span>Capital Appreciation(3)</span>
+                                        </label>
+                                    </div>
+                                    <div class="col">
+                                        <label for="question9c">
+                                            <input type="radio" class="form-check-input" id="question9c" name="q9"
+                                                data-id="2" value="Regular Income(2)">
+                                            <span>Regular Income(2)</span>
+                                        </label>
+                                    </div>
+                                    <div class="col">
+                                        <label for="question9d">
+                                            <input type="radio" class="form-check-input" id="question9d" name="q9"
+                                                data-id="1" value="Savings Only(1)">
+                                            <span>Savings Only(1)</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Question 10 -->
+                            <div class="g-col-lg-4 g-col-12 question-bottom-border">
+                                <p class="fw-medium ">10&#41; Total Experience in Market/Investment</p>
+                                <div class="row row-cols-2 row-gap-3">
+                                    <div class="col">
+                                        <label for="question10a">
+                                            <input type="radio" class="form-check-input" id="question10a" name="q10"
+                                                data-id="4" value="5 Years and above(4)">
+                                            <span>5 Years and above(4)</span>
+                                        </label>
+                                    </div>
+                                    <div class="col">
+                                        <label for="question10b">
+                                            <input type="radio" class="form-check-input" id="question10b" name="q10"
+                                                data-id="3" value="4 to 6 years(3)">
+                                            <span>4 to 6 years(3)</span>
+                                        </label>
+                                    </div>
+                                    <div class="col">
+                                        <label for="question10c">
+                                            <input type="radio" class="form-check-input" id="question10c" name="q10"
+                                                data-id="2" value="2 to 4 Years(2)">
+                                            <span>2 to 4 Years(2)</span>
+                                        </label>
+                                    </div>
+                                    <div class="col">
+                                        <label for="question10d">
+                                            <input type="radio" class="form-check-input" id="question10d" name="q10"
+                                                data-id="1" value="Less then 2 years(1)">
+                                            <span>Less then 2 years(1)</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Question 11 -->
+                            <div class="g-col-lg-4 g-col-12 question-bottom-border">
+                                <p class="fw-medium ">11&#41; Market Value of Portfolio Held</p>
+                                <div class="row row-cols-2 row-gap-3">
+                                    <div class="col">
+                                        <label for="question11a">
+                                            <input type="radio" class="form-check-input" id="question11a" name="q11"
+                                                data-id="4" value="Above 5 Lac(4)">
+                                            <span>Above 5 Lac(4)</span>
+                                        </label>
+                                    </div>
+                                    <div class="col">
+                                        <label for="question11b">
+                                            <input type="radio" class="form-check-input" id="question11b" name="q11"
+                                                data-id="3" value="3 to 5 Lac(3)">
+                                            <span>3 to 5 Lac(3)</span>
+                                        </label>
+                                    </div>
+                                    <div class="col">
+                                        <label for="question11c">
+                                            <input type="radio" class="form-check-input" id="question11c" name="q11"
+                                                data-id="2" value="1 to 3 Lac(2)">
+                                            <span>1 to 3 Lac(2)</span>
+                                        </label>
+                                    </div>
+                                    <div class="col">
+                                        <label for="question11d">
+                                            <input type="radio" class="form-check-input" id="question11d" name="q11"
+                                                data-id="1" value="Less then 1 Lac(1)">
+                                            <span>Less then 1 Lac(1)</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Question 12 -->
+                            <div class="g-col-lg-4 g-col-12 question-bottom-border">
+                                <p class="fw-medium ">12&#41; Experience in Market Segments</p>
+                                <div class="row row-cols-2 row-gap-3">
+                                    <div class="col">
+                                        <label for="question12a">
+                                            <input type="radio" class="form-check-input" id="question12a" name="q12"
+                                                data-id="4" value="All(4)">
+                                            <span>All(4)</span>
+                                        </label>
+                                    </div>
+                                    <div class="col">
+                                        <label for="question12b">
+                                            <input type="radio" class="form-check-input" id="question12b" name="q12"
+                                                data-id="3" value="Commodities(3)">
+                                            <span>Commodities(3)</span>
+                                        </label>
+                                    </div>
+                                    <div class="col">
+                                        <label for="question12c">
+                                            <input type="radio" class="form-check-input" id="question12c" name="q12"
+                                                data-id="2" value="Derivatives (2)">
+                                            <span>Derivatives (2)</span>
+                                        </label>
+                                    </div>
+                                    <div class="col">
+                                        <label for="question12d">
+                                            <input type="radio" class="form-check-input" id="question12d" name="q12"
+                                                data-id="1" value="Stocks(1)">
+                                            <span>Stocks(1)</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Question 13 -->
+                            <div class="g-col-lg-4 g-col-12 question-bottom-border">
+                                <p class="fw-medium ">13&#41; Size of Emergency Funds</p>
+                                <div class="row row-cols-2 row-gap-3">
+                                    <div class="col">
+                                        <label for="question13a">
+                                            <input type="radio" class="form-check-input" id="question13a" name="q13"
+                                                data-id="4" value="Above 12 months income(4)">
+                                            <span>Above 12 months income(4)</span>
+                                        </label>
+                                    </div>
+                                    <div class="col">
+                                        <label for="question13b">
+                                            <input type="radio" class="form-check-input" id="question13b" name="q13"
+                                                data-id="3" value="6 to 12 month Income(3)">
+                                            <span>6 to 12 month Income(3)</span>
+                                        </label>
+                                    </div>
+                                    <div class="col">
+                                        <label for="question13c">
+                                            <input type="radio" class="form-check-input" id="question13c" name="q13"
+                                                data-id="2" value="3 to 6 months Income(2)">
+                                            <span>3 to 6 months Income(2)</span>
+                                        </label>
+                                    </div>
+                                    <div class="col">
+                                        <label for="question13d">
+                                            <input type="radio" class="form-check-input" id="question13d" name="q13"
+                                                data-id="1" value="Less then 3 months(1)">
+                                            <span>Less then 3 months(1)</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Question 14 -->
+                            <div class="g-col-lg-4 g-col-12 question-bottom-border">
+                                <p class="fw-medium ">14&#41; Percentage of income allocated to payoff Debts</p>
+                                <div class="row row-cols-2 row-gap-3">
+                                    <div class="col">
+                                        <label for="question14a">
+                                            <input type="radio" class="form-check-input" id="question14a" name="q14"
+                                                data-id="4" value="None(4)">
+                                            <span>None(4)</span>
+                                        </label>
+                                    </div>
+                                    <div class="col">
+                                        <label for="question14b">
+                                            <input type="radio" class="form-check-input" id="question14b" name="q14"
+                                                data-id="3" value="0 to 20%(3)">
+                                            <span>0 to 20%(3)</span>
+                                        </label>
+                                    </div>
+                                    <div class="col">
+                                        <label for="question14c">
+                                            <input type="radio" class="form-check-input" id="question14c" name="q14"
+                                                data-id="2" value="20 to 35%(2)">
+                                            <span>20 to 35%(2)</span>
+                                        </label>
+                                    </div>
+                                    <div class="col">
+                                        <label for="question14d">
+                                            <input type="radio" class="form-check-input" id="question14d" name="q14"
+                                                data-id="1" value="35% to 50%(1)">
+                                            <span>35% to 50%(1)</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Question 15 -->
+                            <div class="g-col-lg-4 g-col-12 question-bottom-border">
+                                <p class="fw-medium ">15&#41; Status of Accommodation</p>
+                                <div class="row row-cols-2 row-gap-3">
+                                    <div class="col">
+                                        <label for="question15a">
+                                            <input type="radio" class="form-check-input" id="question15a" name="q15"
+                                                data-id="4" value="I already own a house that I always wanted(4)">
+                                            <span>I already own a house that I always wanted(4)</span>
+                                        </label>
+                                    </div>
+                                    <div class="col">
+                                        <label for="question15b">
+                                            <input type="radio" class="form-check-input" id="question15b" name="q15"
+                                                data-id="3" value="I own a house and saving to build a better one(3)">
+                                            <span>I own a house and saving to build a better one(3)</span>
+                                        </label>
+                                    </div>
+                                    <div class="col">
+                                        <label for="question15c">
+                                            <input type="radio" class="form-check-input" id="question15c" name="q15"
+                                                data-id="2" value="I live in company Accomodation(2)">
+                                            <span>I live in company Accomodation(2)</span>
+                                        </label>
+                                    </div>
+                                    <div class="col">
+                                        <label for="question15d">
+                                            <input type="radio" class="form-check-input" id="question15d" name="q15"
+                                                data-id="1" value="I Stay with my parents(1)">
+                                            <span>I Stay with my parents(1)</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Question 16 -->
+                            <div class="g-col-lg-4 g-col-12 question-bottom-border">
+                                <p class="fw-medium ">16&#41; No of financially Dependent on you</p>
+                                <div class="row row-cols-2 row-gap-3">
+                                    <div class="col">
+                                        <label for="question16a">
+                                            <input type="radio" class="form-check-input" id="question16a" name="q16"
+                                                data-id="4" value="None(4)">
+                                            <span>None(4)</span>
+                                        </label>
+                                    </div>
+                                    <div class="col">
+                                        <label for="question16b">
+                                            <input type="radio" class="form-check-input" id="question16b" name="q16"
+                                                data-id="3" value="1 to 2(3)">
+                                            <span>1 to 2(3)</span>
+                                        </label>
+                                    </div>
+                                    <div class="col">
+                                        <label for="question16c">
+                                            <input type="radio" class="form-check-input" id="question16c" name="q16"
+                                                data-id="2" value="2 to 3(2)">
+                                            <span>2 to 3(2)</span>
+                                        </label>
+                                    </div>
+                                    <div class="col">
+                                        <label for="question16d">
+                                            <input type="radio" class="form-check-input" id="question16d" name="q16"
+                                                data-id="1" value="More than 3(1)">
+                                            <span>More than 3(1)</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Question 17 -->
+                            <div class="g-col-lg-4 g-col-12 question-bottom-border">
+                                <p class="fw-medium ">17&#41; Risk tolerance on Investment in terms of losses</p>
+                                <div class="row row-cols-2 row-gap-3">
+                                    <div class="col">
+                                        <label for="question17a">
+                                            <input type="radio" class="form-check-input" id="question17a" name="q17"
+                                                data-id="4" value="40% and above(4)">
+                                            <span>40% and above(4)</span>
+                                        </label>
+                                    </div>
+                                    <div class="col">
+                                        <label for="question17b">
+                                            <input type="radio" class="form-check-input" id="question17b" name="q17"
+                                                data-id="3" value="20 to 40%(3)">
+                                            <span>20 to 40%(3)</span>
+                                        </label>
+                                    </div>
+                                    <div class="col">
+                                        <label for="question17c">
+                                            <input type="radio" class="form-check-input" id="question17c" name="q17"
+                                                data-id="2" value="0 to 20%(2)">
+                                            <span>0 to 20%(2)</span>
+                                        </label>
+                                    </div>
+                                    <div class="col">
+                                        <label for="question17d">
+                                            <input type="radio" class="form-check-input" id="question17d" name="q17"
+                                                data-id="1" value="Less then 20%(1)">
+                                            <span>Less then 20%(1)</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Question 18 -->
+                            <div class="g-col-lg-4 g-col-12 question-bottom-border">
+                                <p class="fw-medium ">18&#41; Practice on Saving money</p>
+                                <div class="row row-cols-2 row-gap-3">
+                                    <div class="col">
+                                        <label for="question18a">
+                                            <input type="radio" class="form-check-input" id="question18a" name="q18"
+                                                data-id="4" value="I save 10-20% of my income anyhow(4)">
+                                            <span>I save 10-20% of my income anyhow(4)</span>
+                                        </label>
+                                    </div>
+                                    <div class="col">
+                                        <label for="question18b">
+                                            <input type="radio" class="form-check-input" id="question18b" name="q18"
+                                                data-id="3" value="I save whenever Possible(3)">
+                                            <span>I save whenever Possible(3)</span>
+                                        </label>
+                                    </div>
+                                    <div class="col">
+                                        <label for="question18c">
+                                            <input type="radio" class="form-check-input" id="question18c" name="q18"
+                                                data-id="2" value="I want to but I fail to save(2)">
+                                            <span>I want to but I fail to save(2)</span>
+                                        </label>
+                                    </div>
+                                    <div class="col">
+                                        <label for="question18d">
+                                            <input type="radio" class="form-check-input" id="question18d" name="q18"
+                                                data-id="1" value="I Don’t believe in Saving(1)">
+                                            <span>I Don’t believe in Saving(1)</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Question 19 -->
+                            <div class="g-col-lg-4 g-col-12 question-bottom-border">
+                                <p class="fw-medium ">19&#41; Experience with Forex Investment</p>
+                                <div class="row row-cols-2 row-gap-3">
+                                    <div class="col">
+                                        <label for="question19a">
+                                            <input type="radio" class="form-check-input" id="question19a" name="q19"
+                                                data-id="4" value="Extensive Experience(4)">
+                                            <span>Extensive Experience(4)</span>
+                                        </label>
+                                    </div>
+                                    <div class="col">
+                                        <label for="question19b">
+                                            <input type="radio" class="form-check-input" id="question19b" name="q19"
+                                                data-id="3" value="Moderate Experience(3)">
+                                            <span>Moderate Experience(3)</span>
+                                        </label>
+                                    </div>
+                                    <div class="col">
+                                        <label for="question19c">
+                                            <input type="radio" class="form-check-input" id="question19c" name="q19"
+                                                data-id="2" value="Less Experience(2)">
+                                            <span>Less Experience(2)</span>
+                                        </label>
+                                    </div>
+                                    <div class="col">
+                                        <label for="question19d">
+                                            <input type="radio" class="form-check-input" id="question19d" name="q19"
+                                                data-id="1" value="Very less Experience(1)">
+                                            <span>Very less Experience(1)</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Question 20 -->
+                            <div class="g-col-lg-4 g-col-12 question-bottom-border">
+                                <p class="fw-medium ">20&#41; Are you any of the following, or directly or indirectly
+                                    related to any of the following</p>
+                                <div class="row row-cols-2 row-gap-3">
+                                    <div class="col">
+                                        <label for="question20a">
+                                            <input type="radio" class="form-check-input" id="question20a" name="q20"
+                                                data-id="1" value="NA(1)">
+                                            <span>NA(1)</span>
+                                        </label>
+                                    </div>
+                                    <div class="col">
+                                        <label for="question20b">
+                                            <input type="radio" class="form-check-input" id="question20b" name="q20"
+                                                data-id="0" value="Civil Servant or Politician(0)">
+                                            <span>Civil Servant or Politician(0)</span>
+                                        </label>
+                                    </div>
+                                    <div class="col">
+                                        <label for="question20c">
+                                            <input type="radio" class="form-check-input" id="question20c" name="q20"
+                                                data-id="0" value="Connected to Media(0)">
+                                            <span>Connected to Media(0)</span>
+                                        </label>
+                                    </div>
+                                    <div class="col">
+                                        <label for="question20d">
+                                            <input type="radio" class="form-check-input" id="question20d" name="q20"
+                                                data-id="0" value="Bureaucrat( IAS, Foreign Service ETC)(0)">
+                                            <span>Bureaucrat( IAS, Foreign Service ETC)(0)</span>
+                                        </label>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="question20e">
+                                            <input type="radio" class="form-check-input" id="question20e" name="q20"
+                                                data-id="0" value="Current or former head of state/MP/MLA/MLC(0)">
+                                            <span>Current or former head of state/MP/MLA/MLC(0)</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Question 21 -->
+                            <div class="g-col-lg-4 g-col-12 question-bottom-border">
+                                <p class="fw-medium ">21&#41; Name of Business/Firm/Company that you own or work</p>
+                                <div>
+                                    <input type="text" autocomplete="off" placeholder="Enter Business / Firm / Company"
+                                        class="form-control form-control-sm w-75" id="question21" name="q21">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                    <div>
+                        <p>provided forms the basis of our recommendation. It is important to provide accurate and
+                            complete information to ensure that suitable services are recommended according to
+                            investment needs and objectives.</p>
+                        <p class="fw-medium ">As per the SEBI Guidelines, Investment Adviser shall ensure
+                            that-<br />
+                            It has a reasonable basis for believing that a recommendation or transaction entered
+                            into:</p>
+
+                        <ol type="i" role="list">
+                            <li role="listitem"> Meets the client’s investment objectives</li>
+                            <li role="listitem">Is such that the client is able to bear any related investment risks
+                                consistent with its investment objectives and risk tolerance.</li>
+                            <li role="listitem">Is such that the client has the necessary experience and knowledge
+                                to understand the risks involved in the transaction.</li>
+                        </ol>
+                        <p class="mt-3">Based on risk involved in Stock Market, financial profile and investment
+                            experience, clients can be categorized into following categories</p>
+
+                        <ol type="1" role="list">
+                            <li role="listitem">
+                                <strong>Low risk investor - </strong>
+                                This type of investor has small tolerance for investment risk. Since trading in
+                                stock market is subject to market risk hence none of the services are recommended
+                                for these investors.
+                            </li>
+                            <li role="listitem">
+                                <strong>Moderate risk investor - </strong>
+                                This type of investor is able to accept investment loss occasionally and is willing
+                                to take small risk associated with market. The services recommended to these
+                                investors
+                                are listed below.
+                            </li>
+                            <li role="listitem">
+                                <strong>High risk investor - </strong>
+                                This type of investor is keen for opportunities to generate a high return and is
+                                able to accept substantial risk and can accept quite high investment loss . The
+                                services recommended to these investors are listed below.
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="mt-5">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Moderate Risk</th>
+                                    <th>High Risk</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>STOCK CASH</td>
+                                    <td>STOCK FUTURE</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>STOCK OPTION</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>COMMODITY</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="row row-gap-4 mt-5">
+                            <div class="col-12 col-md-6">
+                                <div class="d-flex align-items-center">
+                                    <label style="width: 150px" for="riskSegmemt">Risk Segment</label>
+                                    <input type="text" class="w-100 form-control  form-control-sm" name=""
+                                        id="riskSegmemt" value="None" readonly disabled />
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <div class="d-flex align-items-center">
+                                    <label style="width: 150px" for="riskScore">Scores</label>
+                                    <input type="text" class="w-100 form-control  form-control-sm" name=""
+                                        id="riskScore" value="0" readonly disabled />
+                                </div>
+                            </div>
+                        </div>
+                        <form onsubmit="submitSelectServicesForm(event, 'selectServicesForm')" id="selectServicesForm">
+                            <div class="row row-cols-1 row-gap-4 mt-5">
+                                <p class="mb-0 fw-medium ">Select:</p>
+                                <!-- For Low Risk -->
+                                <div class="col" id="lowRiskWrapper">
+                                    <p class="fw-medium ">Low Risk</p>
+                                    <div class="row row-cols-1 row-gap-2">
+                                        <div class="col">
+                                            <label for="lowRisk">
+                                                <input type="radio" class="form-check-input" id="lowRisk" name="lowRisk"
+                                                    value="No Service can be offered">
+                                                <span>No Service can be offered</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- For Moderate Risk -->
+                                <div class="col" id="moderateRiskWrapper"></div>
+                                <!-- For High Risk -->
+                                <div class="col" id="highRiskWrapper"></div>
+                                <div class="col">
+                                    <div class="d-flex align-items-center column-gap-2">
+                                        <label for="payableAmount" class="label-width fw-medium ">Payable Amount</label>
+                                        <input type="number" placeholder="00"
+                                            class="form-control form-control-sm w-auto" id="payableAmount"
+                                            name="payableAmount">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="d-flex justify-content-end column-gap-2 mt-5">
+                                <button autocomplete="off" type="button" class="btn btn-secondary mb-3"
+                                    onclick="changeStep(false)">Back</button>
+                                <button autocomplete="off" type="submit" class="btn btn-primary mb-3">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="footer bg-dark text-white pt-5 pb-4">
+            <footer>
+                <div class="footer-top">
+                    <div class="container">
+                        <div class="row text-center text-sm-start">
+                            <div class="col-lg-4 col-12">
+                                <h4>About us</h4>
+                                <p>
+                                    Welcome to Choice Stocks Index Financial Research, your trusted partner in the world
+                                    of
+                                    financial markets. As a leading provider of comprehensive
+                                    financial services, we understand the importance of keeping
+                                    you informed and empowered. Our website footer serves as a
+                                    gateway to essential information and resources, ensuring
+                                    that you have everything you need at your fingertips.
+                                </p>
+                            </div>
+
+                            <div class="col-lg-4 col-12">
+                                <h4>Information</h4>
+                                <ul>
+                                    <li class="d-flex align-items-start gap-2 py-2">
+                                        <span class="material-symbols-outlined pt-1">
+                                            home_pin
+                                        </span>
+                                        <span>
+                                            Dollar Trad House 104, 4th Floor, Sector 5, Main AB Road Indore (M.P.) -
+                                            452001
+                                        </span>
+                                    </li>
+                                    <li class="d-flex align-items-start gap-2 py-2">
+                                        <span class="material-symbols-outlined">
+                                            license
+                                        </span>
+                                        <span class="text-white">SEBI Registration No.: INZ000160131</span>
+                                    </li>
+                                    <li class="d-flex align-items-start gap-2 py-2">
+                                        <span class="material-symbols-outlined">
+                                            contact_mail
+                                        </span>
+                                        <a href="mailto:sresearch41@gmail.com"
+                                            class="text-white">sresearch41@gmail.com</a>
+                                    </li>
+                                    <li class="d-flex align-items-start gap-2 py-2">
+                                        <span class="material-symbols-outlined"> call </span>
+                                        <a href="tel:+918269613936" class="text-white">+918269613936</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="col-lg-4 col-12">
+                                <iframe title="Location of Choice Stocks Index Financial Research Indore"
+                                    src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d5017.495130318605!2d75.89280755090233!3d22.750832832292083!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sVijay%20Nagar%20Square%2C%20Bhagyashree%20Colony%2C%20Indore%2C%20Madhya%20Pradesh!5e0!3m2!1sen!2sin!4v1708714487776!5m2!1sen!2sin"
+                                    width="100%" height="200" style="border: 0" allowfullscreen="" loading="lazy"
+                                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                        </div>
+                        <div class="row text-center mt-3">
+                            <p class="copyright mb-0">
+                                Copyright © <span id="year"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </section>
+
+        <!-- Whatapp Icon  -->
+        <a class="contact-whatsapp_icon position-fixed " href="http://wa.me/+918269613936?text=I+need+choice-stocks">
+            <img src="assets/images/contact-me-on-whatsapp-icon.png" width="36" height="36"
+                alt="Whatapp Icon to contact on whatsapp">
+        </a>
+        <!-- Calling Icon  -->
+        <a class="contact-call_icon position-fixed " href="tel:+918269613936">
+            <img src="assets/images/phone-call-icon-design-in-blue-circle.png" width="36" height="36"
+                alt="Calling Icon to contact on call">
+        </a>
+    </div>
+
+    <!-- Bootstrap JS CDN -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

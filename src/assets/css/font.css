@@ -1,0 +1,47 @@
+:root {
+    --font-size-14: 14px;
+    --font-size-16: 16px;
+    --font-size-20: 20px;
+    --font-size-24: 24px;
+    --font-size-28: 28px;
+    --font-size-32: 32px;
+    --font-size-36: 36px;
+    --font-size-42: 42px;
+    --font-size-62: 62px;
+}
+
+.fs-14 {
+    font-size: var(--font-size-14);
+}
+
+.fs-16 {
+    font-size: var(--font-size-16);
+}
+
+.fs-20 {
+    font-size: var(--font-size-20);
+}
+
+.fs-24 {
+    font-size: var(--font-size-24);
+}
+
+.fs-28 {
+    font-size: var(--font-size-28);
+}
+
+.fs-32 {
+    font-size: var(--font-size-32);
+}
+
+.fs-36 {
+    font-size: var(--font-size-36);
+}
+
+.fs-42 {
+    font-size: var(--font-size-42);
+}
+
+.fs-62 {
+    font-size: var(--font-size-62);
+}

@@ -1,3 +1,7 @@
 .label-width {
     min-width: 150px;
 }
+
+.cursor-pointer {
+    cursor: pointer !important;
+}

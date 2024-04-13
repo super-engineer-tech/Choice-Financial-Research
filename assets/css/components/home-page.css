@@ -1,0 +1,43 @@
+.choice-stocks .banner {
+    height: 80vh;
+}
+
+.choice-stocks .contact-whatsapp_icon {
+    cursor: pointer !important;
+    bottom: 20px;
+    right: 20px;
+}
+
+.choice-stocks .contact-call_icon {
+    cursor: pointer !important;
+    bottom: 66px;
+    right: 20px;
+}
+
+.choice-stocks .services-wrapper {
+    background: linear-gradient(-45deg, #ffffff, #23a6d5, #83dfe6);
+    background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
+}
+
+.choice-stocks .services-wrapper .card {
+    height: 360px;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}

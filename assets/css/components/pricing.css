@@ -1,0 +1,14 @@
+.card-wrapper {
+    max-width: 1000px;
+}
+
+.card-wrapper .card {
+    height: 100%;
+    border: 1px solid orange;
+    border-top-width: 5px;
+    border-radius: 5px !important;
+}
+
+.card-wrapper table tr td {
+    border: none;
+}

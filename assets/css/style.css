@@ -3,9 +3,15 @@
 @import "./font.css";
 @import "./utility.css";
 @import "./reset.css";
+@import "/assets/css/components/home-page.css";
 @import "/assets/css/components/navbar.css";
 @import "/assets/css/components/services.css";
 @import "/assets/css/components/risk-analysis.css";
+@import "/assets/css/components/contact-us.css";
+@import "/assets/css/components/enquiry.css";
+@import "/assets/css/components/payment.css";
+@import "/assets/css/components/pricing.css";
+
 
 * {
   margin: 0;
@@ -32,99 +38,4 @@
 .contact-wrapper form {
   max-width: 600px;
   margin: auto;
-}
-
-
-.payment {
-  min-height: 94vh;
-}
-
-/* .was-validated .valid-feedback {
-    display: block;
-} */
-
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
-
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-/* ========================================================================== */
-/* CONTACT-US-PAGE */
-
-#formSubmit {
-  max-width: 600px;
-}
-
-.send-btn button {
-  width: 200px;
-  height: 40px;
-}
-
-/* ==================================================================== */
-/* PRICING-PAGE */
-
-.pricing {
-  padding-top: 100px;
-}
-
-.pricing-page {
-  padding: 40px;
-  margin: 10px;
-}
-
-.address h5 {
-  text-align: center;
-}
-
-h5.card-title {
-  text-align: center;
-}
-
-.card-group-1 {
-  margin-top: 60px;
-}
-
-.card-group-2 {
-  margin-top: 40px;
-}
-
-.card-group-3 {
-  margin-top: 40px;
-  width: 380px;
-}
-
-.card-group .card {
-  border: 1px solid orange;
-  border-top: 5px solid orange;
-  border-radius: 5px !important;
-}
-
-.card-group table tr td {
-  border: none;
-}
-
-/* =================================================== */
-/* ENCURIY-PAGE */
-
-.enquiry-page form {
-  max-width: 500px;
-}
-
-
-.orange {
-  color: gray;
-  cursor: pointer;
-}
-
-.orange:hover {
-  color: orange;
 }

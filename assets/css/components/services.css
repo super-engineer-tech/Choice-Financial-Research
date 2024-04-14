@@ -1,0 +1,20 @@
+.our-services {
+    min-height: 85dvh;
+}
+
+.our-services ul.hoverable-list {
+    width: fit-content;
+}
+
+.our-services ul.hoverable-list li:hover {
+    color: var(--bs-primary);
+}
+
+.our-services .nav-tabs .nav-link.active {
+    color: var(--bs-primary) !important;
+    font-weight: 600;
+}
+
+.our-services .nav-tabs .nav-link {
+    color: var(--bs-gray-dark) !important;
+}

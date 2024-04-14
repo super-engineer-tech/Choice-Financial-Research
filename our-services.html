@@ -23,9 +23,10 @@
         <a class="navbar-brand text-white cursor-pointer" href="/index.html">
           <img src="assets/images/Choice-Stocks-Index-Financial-Research-icon.png"
             alt="Choice Stocks Index Financial Research Logo" height="50" width="auto" />
-          <h2 class="d-inline-block">Choice Stocks Index Financial Research</h2>
+          <h2 class="d-none d-xl-inline-block">Choice Stocks Index Financial Research</h2>
+          <h2 class="d-none d-sm-inline-block d-xl-none">Choice Financial Research</h2>
         </a>
-        <button class="navbar-toggler text-warning border-0 collapsed" onclick="toggleMenu()" type="button"
+        <button class="navbar-toggler text-white border-0 collapsed" onclick="toggleMenu()" type="button"
           data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
           aria-expanded="false" aria-label="Toggle navigation">
           <span class="material-symbols-outlined close"> menu </span>
@@ -59,87 +60,165 @@
       </div>
     </nav>
 
-    <section class="enquiry-page mt-5 py-5">
+    <section class="our-services mt-5 py-5">
       <div class="container">
         <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <!-- All Services Tab -->
           <li class="nav-item" role="presentation">
-            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane"
-              type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Home</button>
+            <button class="nav-link active" id="all-services-tab" data-bs-toggle="tab" data-bs-target="#all-services"
+              type="button" role="tab" aria-controls="all-services" aria-selected="true">All Services</button>
           </li>
+          <!-- Intraday Cash Service Tab -->
           <li class="nav-item" role="presentation">
-            <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane"
-              type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Profile</button>
+            <button class="nav-link" id="intradayCash-tab" data-bs-toggle="tab" data-bs-target="#intradayCash"
+              type="button" role="tab" aria-controls="intradayCash" aria-selected="false">Intraday Cash</button>
+          </li>
+          <!-- Intraday Derivatives Service Tab -->
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="intradayDerivatives-tab" data-bs-toggle="tab"
+              data-bs-target="#intradayDerivatives" type="button" role="tab" aria-controls="intradayDerivatives"
+              aria-selected="false">Intraday Derivatives</button>
+          </li>
+          <!-- Equity & Derivatives Ultra Premium Service Tab -->
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="equity-tab" data-bs-toggle="tab" data-bs-target="#equity" type="button"
+              role="tab" aria-controls="equity" aria-selected="false">Equity & Derivatives Ultra Premium</button>
+          </li>
+          <!-- BTST & STBT / Weekly Holdings Service Tab -->
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="btst-tab" data-bs-toggle="tab" data-bs-target="#btst" type="button" role="tab"
+              aria-controls="btst" aria-selected="false">BTST & STBT / Weekly Holdings</button>
+          </li>
+          <!-- Customize Services Service Tab -->
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="customise-tab" data-bs-toggle="tab" data-bs-target="#customise" type="button"
+              role="tab" aria-controls="customise" aria-selected="false">Customize Services</button>
           </li>
         </ul>
         <div class="tab-content" id="myTabContent">
-          <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab"
-            tabindex="0">AAAAAAAAA</div>
-          <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
-            <div>
-              <div class="heading">
-                <h2>SERVICES</h2>
-                <p class="mt-3">
-                  We provide best customer support while all market up & downs,
-                  Kindly fill below details to get a call back from our Market
-                  Expert.
-                </p>
-              </div>
-              <form id="enquiryForm" class="d-flex flex-column row-gap-3 my-4">
-                <span>
-                  <label for="name">Your Name<span class="text-danger">*</span></label>
-                  <input name="name" class="form-control" id="name" type="text" required />
-                </span>
+          <!-- All Services Content -->
+          <div class="tab-pane fade show active" id="all-services" role="tabpanel" aria-labelledby="all-services-tab"
+            tabindex="0">
+            <div class="py-5">
+              <ul type="square" class="list-styled hoverable-list">
+                <li class="mb-2 cursor-pointer fw-medium" onclick="handleTabChanged('intradayCash')">Intraday Cash</li>
+                <li class="mb-2 cursor-pointer fw-medium" onclick="handleTabChanged('intradayDerivatives')">Intraday
+                  Derivatives
+                </li>
+                <li class="mb-2 cursor-pointer fw-medium" onclick="handleTabChanged('equity')">Equity & Derivatives
+                  Ultra Premium
+                </li>
+                <li class="mb-2 cursor-pointer fw-medium" onclick="handleTabChanged('btst')">BTST & STBT / Weekly
+                  Holdings</li>
+                <li class="mb-2 cursor-pointer fw-medium" onclick="handleTabChanged('customise')">Customize Services
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- Intraday Cash Service Content -->
+          <div class="tab-pane fade show" id="intradayCash" role="tabpanel" aria-labelledby="intradayCash-tab"
+            tabindex="0">
+            <div class="py-4">
+              <h2>Intraday Cash</h2>
+              <p>Intraday Service Providing for daily Earning Purpose, In This Service Customer Want to Increase
+                Investment on Daily Basis, intraday Service Is Describe Daily Volatility in This Market.</p>
 
-                <span>
-                  <label for="email">Your Email<span class="text-danger">*</span></label>
-                  <input name="email" class="form-control" id="email" type="email" required />
-                </span>
+              <p class="fw-bold mt-4 mb-2">Service Benefit:-</p>
+              <ul class="list-styled">
+                <li class="mb-2">Get Daily 3-4 Recommendations</li>
+                <li class="mb-2">Message Support</li>
+                <li class="mb-2">Global market Updates</li>
+                <li class="mb-2">Nifty/Bank nifty Updates</li>
+                <li class="mb-2">Entry & Exit Support</li>
+              </ul>
+            </div>
+          </div>
+          <!-- Intraday Derivatives Service Content -->
+          <div class="tab-pane fade show" id="intradayDerivatives" role="tabpanel"
+            aria-labelledby="intradayDerivatives-tab" tabindex="0">
+            <div class="py-4">
+              <h2>Intraday Derivatives</h2>
+              <p>Intraday Derivatives Service is Available for Both Future & Option Trading, In Equity & Commodity
+                Service, In This Service You Can Trad in Multiple Lots for Hedging Method & swing Trading for Minimize
+                the Risk Ratio.</p>
 
-                <span>
-                  <label for="mobile">Your Mobile<span class="text-danger">*</span></label>
-                  <input name="mobile" class="form-control" id="mobile" type="text" required />
-                </span>
+              <p class="fw-bold mt-4 mb-2">Service Benefit:-</p>
+              <ul class="list-styled">
+                <li class="mb-2">Get Daily 3-4 Recommendations</li>
+                <li class="mb-2">Message Support</li>
+                <li class="mb-2">Global market Updates</li>
+                <li class="mb-2">Nifty/Bank nifty Updates</li>
+                <li class="mb-2">MCX & NCDEX Updates</li>
+                <li class="mb-2">Entry & Exit Support</li>
+              </ul>
+            </div>
+          </div>
+          <!-- Equity & Derivatives Ultra Premium Service Content -->
+          <div class="tab-pane fade show" id="equity" role="tabpanel" aria-labelledby="equity-tab" tabindex="0">
+            <div class="py-4">
+              <h2>Equity & Derivatives Ultra Premium</h2>
+              <p>In Premium Service Will Get Support from Highly Experience Relationship Manager and This service Is
+                Available for Highly professional & active Trader in This Market.</p>
 
-                <span>
-                  <label for="services">Services</label>
-                  <select name="services" id="services" class="form-select" multiple aria-label="Select services">
-                    <option selected>Select service</option>
-                    <option value="Choice Stocks Index Financial Research Equity">Choice Stocks Index Financial Research
-                      Equity</option>
-                    <option value="Choice Stocks Index Financial Research Commodity">Choice Stocks Index Financial
-                      Research
-                      Commodity</option>
-                    <option value="Choice Stocks Index Financial Research Agri">Choice Stocks Index Financial Research
-                      Agri
-                    </option>
-                  </select>
-                </span>
+              <p class="fw-bold mt-4 mb-2">Service Benefit:-</p>
+              <ul class="list-styled">
+                <li class="mb-2">Personal RM Assign</li>
+                <li class="mb-2">Get Daily 1-2 Recommendations In per Segment</li>
+                <li class="mb-2">Message Support</li>
+                <li class="mb-2">Global market Updates</li>
+                <li class="mb-2">Nifty/Bank nifty Updates</li>
+                <li class="mb-2">Entry & Exit Support</li>
+                <li class="mb-2">2 Executives Assign for Telephonic Supporttes</li>
+              </ul>
+            </div>
+          </div>
+          <!-- BTST & STBT / Weekly Holdings Service Content -->
+          <div class="tab-pane fade show" id="btst" role="tabpanel" aria-labelledby="btst-tab" tabindex="0">
+            <div class="py-4">
+              <h2>BTST & STBT / Weekly Holdings</h2>
+              <p>In this Service Plan Customer Will Get Some Recommendations for (BTST) Buy Today & Sell Tomorrow, Same
+                Like Will Get Some Recommendations For (STBT) Sell Today and Buy Tomorrow, In Both Service Customer Will
+                Get the Benefits of Highly Fluctuation Done by Fundamentally News.</p>
 
-                <span>
-                  <label for="message">Your Message</label>
-                  <textarea name="message" cols="40" rows="3" class="form-control" id="message"></textarea>
-                </span>
+              <p class="fw-bold mt-4 mb-2">Service Benefit:-</p>
+              <ul class="list-styled">
+                <li class="mb-2">Get 1-2 Calls Daily BTST</li>
+                <li class="mb-2">Get 1-2 Calls Daily STBT</li>
+                <li class="mb-2">Get 1 Calls Daily for Weekly Holdings</li>
+                <li class="mb-2">Message Support</li>
+                <li class="mb-2">Global market Updates</li>
+                <li class="mb-2">Nifty/Bank nifty Updates</li>
+                <li class="mb-2">Entry & Exit Support</li>
+              </ul>
+            </div>
+          </div>
+          <!-- Customize Services Service Content -->
+          <div class="tab-pane fade show" id="customise" role="tabpanel" aria-labelledby="customise-tab" tabindex="0">
+            <div class="py-4">
+              <h2>Customize Services</h2>
+              <p>In This Plan Highly Research Is required With Highly professional & Knowledgeable Team in This
+                Market,<br />
+                In This Service Any Recommendations is Providing After the Completion of Three Research Pattern of </p>
+              <ol class="mt-4">
+                <li>Technically Research</li>
+                <li>Fundamentals Research and Last One</li>
+                <li>Sentiment Research Pattern</li>
+              </ol>
+              <p class="mt-4">In this Plan Any Recommendations Need One Week Observations & research On Selected Stocks
+                Before the Advice to The Customer.</p>
+              <p class="fw-bold mt-4 mb-2">Service Benefit:-</p>
 
-                <div>
-                  <p> I have read and I do agree to all <span class="terms-msg text-secondary cursor-pointer">terms and
-                      condition described here.</span></p>
-                  <div class="d-flex align-items-center column-gap-2">
-                    <input class="checkbox" id="terms" class="form-control cursor-pointer" name="terms"
-                      type="checkbox" />
-                    <label for="terms">I Agree</label>
-                  </div>
-                </div>
-
-                <div class="text-end">
-                  <button type="submit" class="btn btn-outline-warning ms-auto">SEND</button>
-                </div>
-              </form>
-              <p>
-                <strong>Disclaimer:</strong> By entering your Mobile number and email id, you
-                authorize our company to contact you in future via Phone
-                Call/SMS or by Email, even if your mobile number is registered
-                in NDNC.
-              </p>
+              <ul class="list-styled">
+                <li class="mb-2">Only 4-5 Calls Will Get in Weekly Basis.</li>
+                <li class="mb-2">You will Get Directly Support from Relationship Manager.</li>
+                <li class="mb-2">Highly Support from Market opening To Till after Closing Bell.</li>
+                <li class="mb-2">Global Updates Before Indian Market Opening.</li>
+                <li class="mb-2">Nifty & Bank Nifty Updates with Highly Support/Resistance.</li>
+                <li class="mb-2">Swing Trading Support and Knowledge Will Provide.</li>
+                <li class="mb-2">2 Experience Executive Support Will get.</li>
+                <li class="mb-2">Hedging, Moving, averaging, Compounding Strategies You Can Get for Highly Return on
+                  Your Investment.</li>
+              </ul>
             </div>
           </div>
         </div>
@@ -150,7 +229,7 @@
       <footer>
         <div class="footer-top">
           <div class="container">
-            <div class="row text-center text-sm-start">
+            <div class="row text-start">
               <div class="col-lg-4 col-12">
                 <h4>About us</h4>
                 <p>
@@ -225,6 +304,24 @@
   <!-- Bootstrap JS CDN -->
   <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script> -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Select tab by name
+    const triggerTabList = document.querySelectorAll('#myTab button')
+    triggerTabList.forEach(triggerEl => {
+      const tabTrigger = new bootstrap.Tab(triggerEl)
+
+      triggerEl.addEventListener('click', event => {
+        event.preventDefault()
+        tabTrigger.show()
+      })
+    })
+
+    function handleTabChanged(tabName) {
+      const triggerEl = document.querySelector(`#myTab button[data-bs-target="#${tabName}"]`);
+      bootstrap.Tab.getInstance(triggerEl).show();
+    }
+  </script>
 </body>
 
 </html>

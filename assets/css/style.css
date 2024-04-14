@@ -8,7 +8,6 @@
 @import "/assets/css/components/services.css";
 @import "/assets/css/components/risk-analysis.css";
 @import "/assets/css/components/contact-us.css";
-@import "/assets/css/components/enquiry.css";
 @import "/assets/css/components/payment.css";
 @import "/assets/css/components/pricing.css";
 
@@ -20,7 +19,7 @@
 }
 
 .choice-stocks .banner {
-  height: 80vh;
+  height: 80dvh;
 }
 
 .choice-stocks .contact-whatsapp_icon {

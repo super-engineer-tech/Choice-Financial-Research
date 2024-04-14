@@ -1,62 +1,79 @@
 .choice-stocks .navbar {
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 9;
-    min-height: 60px;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9;
+  min-height: 60px;
+}
+
+.choice-stocks .navbar .navbar-toggler {
+  box-shadow: none;
+}
+
+.navbar-toggler .open {
+  display: inline;
+}
+
+.navbar-toggler .close {
+  display: none;
+}
+
+.navbar-toggler.collapsed .open {
+  display: none;
+}
+
+.navbar-toggler.collapsed .close {
+  display: inline;
+}
+
+.choice-stocks .navbar-brand h2 {
+  font-size: var(--font-size-20);
+  line-height: 40px;
+}
+
+.choice-stocks .navbar.navbar--scrolled {
+  backdrop-filter: blur(6px);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.choice-stocks .navbar .navbar-nav .nav-item .nav-link {
+  transition: all 100ms;
+  line-height: 20px;
+  cursor: pointer !important;
+  position: relative;
+}
+
+.choice-stocks .navbar .navbar-nav .nav-item .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0px;
+  display: block;
+  width: 0;
+  height: 2px;
+  background-color: var(--bs-white);
+  transition: all 300ms ease-in-out;
+}
+
+.choice-stocks .navbar .navbar-nav .nav-item:hover .nav-link::after {
+  width: 85%;
+  background-color: red !important;
+}
+
+.choice-stocks .navbar .navbar-nav .nav-item .nav-link.active::after {
+  width: 85%;
+  background-color: red !important;
+}
+
+@media screen and (max-width: 992px) {
+  .choice-stocks .navbar .navbar-nav .nav-item:hover .nav-link::after {
+    width: 80px;
   }
-  
-  .choice-stocks .navbar .navbar-toggler {
-    box-shadow: none;
+
+  .choice-stocks .navbar .navbar-nav .nav-item .nav-link.active::after {
+    width: 80px;
   }
-  
-  .navbar-toggler .open {
-    display: inline;
+
+  .choice-stocks .navbar .navbar-nav .nav-item .nav-link.active {
+    color: red !important;
   }
-  
-  .navbar-toggler .close {
-    display: none;
-  }
-  
-  .navbar-toggler.collapsed .open {
-    display: none;
-  }
-  
-  .navbar-toggler.collapsed .close {
-    display: inline;
-  }
-  
-  .choice-stocks .navbar-brand h2 {
-    font-size: var(--font-size-20);
-    line-height: 40px;
-  }
-  
-  .choice-stocks .navbar.navbar--scrolled {
-    backdrop-filter: blur(6px);
-    background-color: rgba(0, 0, 0, 0.4);
-  }
-  
-  .choice-stocks .navbar .navbar-nav .nav-item .nav-link {
-    transition: all 100ms;
-    line-height: 20px;
-    cursor: pointer !important;
-    position: relative;
-  }
-  .choice-stocks .navbar .navbar-nav .nav-item .nav-link::after {
-    content: '';
-    position: absolute;
-    bottom: 0px;
-    display: block;
-    width: 0;
-    height: 2px;
-    background-color: #fff;
-    transition: all 300ms ease-in-out;
-  }
-  .choice-stocks .navbar .navbar-nav .nav-item:hover .nav-link::after{
-    width: 85%;
-    background-color: red !important;
-  }
-  .choice-stocks .navbar .navbar-nav .nav-item .nav-link.active::after{
-    width: 85%;
-    background-color: red !important;
-  }
+}

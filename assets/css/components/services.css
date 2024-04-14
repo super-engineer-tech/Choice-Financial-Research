@@ -2,6 +2,10 @@
     min-height: 85dvh;
 }
 
+.our-services #myTab li.nav-item {
+    flex: 1 0 auto;
+}
+
 .our-services ul.hoverable-list {
     width: fit-content;
 }

@@ -1,5 +1,5 @@
-.choice-stocks .banner {
-    height: 80vh;
+.choice-stocks #carouselExampleCaptions .carousel-caption {
+   backdrop-filter: blur(1.5px)brightness(0.5);
 }
 
 .choice-stocks .contact-whatsapp_icon {

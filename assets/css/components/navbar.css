@@ -40,9 +40,23 @@
     transition: all 100ms;
     line-height: 20px;
     cursor: pointer !important;
+    position: relative;
   }
-  
-  .choice-stocks .navbar .navbar-nav .nav-item .nav-link:hover {
-    transform: scale(1.1);
-    text-decoration: underline;
+  .choice-stocks .navbar .navbar-nav .nav-item .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: #fff;
+    transition: all 300ms ease-in-out;
+  }
+  .choice-stocks .navbar .navbar-nav .nav-item:hover .nav-link::after{
+    width: 85%;
+    background-color: red !important;
+  }
+  .choice-stocks .navbar .navbar-nav .nav-item .nav-link.active::after{
+    width: 85%;
+    background-color: red !important;
   }

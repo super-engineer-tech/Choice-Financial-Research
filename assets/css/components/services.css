@@ -4,6 +4,7 @@
 
 .our-services #myTab li.nav-item {
     flex: 1 0 auto;
+
 }
 
 .our-services ul.hoverable-list {
@@ -21,4 +22,9 @@
 
 .our-services .nav-tabs .nav-link {
     color: var(--bs-gray-dark) !important;
+}
+
+.our-services .swing-service-list li::marker {
+    font-weight: 600;
+    font-size: var(--font-size-20);
 }

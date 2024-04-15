@@ -66,7 +66,7 @@
           <!-- All Services Tab -->
           <li class="nav-item" role="presentation">
             <button class="nav-link active" id="all-services-tab" data-bs-toggle="tab" data-bs-target="#all-services"
-              type="button" role="tab" aria-controls="all-services" aria-selected="true">All Services</button>
+              type="button" role="tab" aria-controls="all-services" aria-selected="true">All</button>
           </li>
           <!-- Intraday Cash Service Tab -->
           <li class="nav-item" role="presentation">
@@ -94,6 +94,11 @@
             <button class="nav-link" id="customise-tab" data-bs-toggle="tab" data-bs-target="#customise" type="button"
               role="tab" aria-controls="customise" aria-selected="false">Customize Services</button>
           </li>
+          <!-- Swing Trading Services Service Tab -->
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="swing-tab" data-bs-toggle="tab" data-bs-target="#swing" type="button"
+              role="tab" aria-controls="swing" aria-selected="false">Swing Trading</button>
+          </li>
         </ul>
         <div class="tab-content" id="myTabContent">
           <!-- All Services Content -->
@@ -111,6 +116,8 @@
                 <li class="mb-2 cursor-pointer fw-medium" onclick="handleTabChanged('btst')">BTST & STBT / Weekly
                   Holdings</li>
                 <li class="mb-2 cursor-pointer fw-medium" onclick="handleTabChanged('customise')">Customize Services
+                </li>
+                <li class="mb-2 cursor-pointer fw-medium" onclick="handleTabChanged('swing')">Swing Trading Services
                 </li>
               </ul>
             </div>
@@ -192,7 +199,7 @@
               </ul>
             </div>
           </div>
-          <!-- Customize Services Service Content -->
+          <!-- Customize Services Content -->
           <div class="tab-pane fade show" id="customise" role="tabpanel" aria-labelledby="customise-tab" tabindex="0">
             <div class="py-4">
               <h2>Customize Services</h2>
@@ -219,6 +226,40 @@
                 <li class="mb-2">Hedging, Moving, averaging, Compounding Strategies You Can Get for Highly Return on
                   Your Investment.</li>
               </ul>
+            </div>
+          </div>
+          <!-- Swing Trading Service Content -->
+          <div class="tab-pane fade show" id="swing" role="tabpanel" aria-labelledby="swing-tab" tabindex="0">
+            <div class="py-4">
+              <h2>Swing Trading Services</h2>
+
+              <ol class="mt-4 swing-service-list">
+                <li>
+                  <h5>What is Swing Trading?</h5>
+                  <p>Swing trading is a form of trading where traders hold positions in a given stock for longer than
+                    one day. The stocks are held for a few days or even a few weeks. This form of trading is popular in
+                    the Indian stock market. It attempts to capture gains in an asset over a few days to several weeks.
+                  </p>
+                </li>
+                <li>
+                  <h5>Is swing trading profitable?</h5>
+                  <p>The Swing Trading strategy can lead to profits in the short term, usually in the range of 10% to
+                    30%. However, as most things investing usually are, it is a risky bet. About 90% of traders report
+                    losses during trading.</p>
+                </li>
+                <li>
+                  <h5>Is swing trade same as intraday?</h5>
+                  <p>Day traders close positions within the same day, while swing traders hold overnight or for several
+                    days to weeks for potential profits. Are swing traders more successful? The success of swing traders
+                    depends on various factors, including their strategy, risk management, and market conditions.</p>
+                </li>
+                <li>
+                  <h5>What is intraday swing?</h5>
+                  <p>Depending on the size of the position you take, your returns from just a few successful swing
+                    trades could be significant. On the other hand, intraday trading involves opening and closing
+                    multiple positions within the same trading day.</p>
+                </li>
+              </ol>
             </div>
           </div>
         </div>
